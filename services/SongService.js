@@ -26,3 +26,11 @@ exports.create = (song) => {
 exports.delete = id => {
    return db.Songs.destroy({where: {id:id}});
 };
+
+exports.findByArtiste = artiste => {
+  return db.Songs.findAll({
+    where: {
+      artist : artiste
+    }
+  });
+};

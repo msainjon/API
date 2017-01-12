@@ -37,4 +37,13 @@ router.delete('/delete/:id', (req, res) => {
   ;
 });
 
+router.get('/artiste/:artiste', (req, res) => {
+  SongService.findByArtiste(req.params.artiste)
+    .then(songs => {
+      res.status(200).send(songs);
+    })
+    .catch(err => { res.status(500).send(error)})
+  ;
+});
+
 module.exports = router;

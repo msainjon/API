@@ -20,16 +20,16 @@ router.get('/', (req, res) => {
   ;
 });
 
-/*router.get('/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   SongService.findById(req.params.id)
     .then(songs => {
       res.status(200).send(songs);
     })
     .catch(err => { res.status(500).send(error)})
   ;
-});*/
+});
 
-router.get('/:id', (req, res) => {
+/*router.get('/:id', (req, res) => {
   if (!req.accepts('text/html') && !req.accepts('application/json')) {
        return res.status(406).send({err: 'Not valid type for asked resource'});
    }
@@ -44,7 +44,7 @@ router.get('/:id', (req, res) => {
                return res.status(200).send(song);
            }
   });
-});
+});*/
 
 router.delete('/delete/:id', (req, res) => {
   SongService.delete(req.params.id)

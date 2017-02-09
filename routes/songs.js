@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
   if (!req.accepts('text/html') && !req.accepts('application/json')) {
        return res.status(406).send({err: 'Not valid type for asked resource'});
    }
-   SongService.findById(req.params.id).then(song => {
+   SongService.findOneByQuery({id: req.params.id}).then(song => {
            if (!song) {
                return res.status(404).send({err: `id ${req.params.id} not found`});
            }

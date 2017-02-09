@@ -34,3 +34,7 @@ exports.findByArtiste = artiste => {
     }
   });
 };
+
+exports.findOneByQuery = query => {
+    return db.Songs.findOne({ where: query });
+};

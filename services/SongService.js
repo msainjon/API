@@ -38,3 +38,7 @@ exports.findByArtiste = artiste => {
 exports.findOneByQuery = query => {
     return db.Songs.findOne({ where: query });
 };
+
+exports.updateById = (id, dataToUpdate) => {
+    return db.Songs.update(dataToUpdate, { where: { id }, returning: true });
+};
